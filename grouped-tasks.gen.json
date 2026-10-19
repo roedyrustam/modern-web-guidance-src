@@ -135,9 +135,18 @@
       ]
     },
     "html": {
+      "form-associated-custom-elements": [
+        "daily-grind"
+      ],
       "html": [
         "daily-grind",
         "devtools-times"
+      ],
+      "prerendering-custom-elements": [
+        "daily-grind"
+      ],
+      "web-components": [
+        "daily-grind"
       ]
     },
     "js": {
@@ -157,6 +166,9 @@
         "task"
       ],
       "model-partial-time-concepts": [
+        "task"
+      ],
+      "sequence-distributed-events": [
         "task"
       ],
       "stabilize-reactive-state": [
@@ -222,6 +234,9 @@
       "interactions-in-complex-layouts": [
         "task"
       ],
+      "lazy-load-video-and-audio": [
+        "daily-grind"
+      ],
       "optimize-image-priority": [
         "task"
       ],
@@ -238,9 +253,6 @@
         "task"
       ],
       "schedule-tasks-by-priority": [
-        "task"
-      ],
-      "sequence-distributed-events": [
         "task"
       ]
     },
@@ -283,6 +295,9 @@
       ],
       "security": [
         "daily-grind"
+      ],
+      "verify-email-ownership": [
+        "daily-grind"
       ]
     },
     "ui-atoms": {
@@ -298,9 +313,6 @@
       "pull-to-reveal": [
         "task"
       ],
-      "resilient-context-menus-and-nested-dropdowns": [
-        "task"
-      ],
       "scroll-position-aware-elements": [
         "task"
       ],
@@ -314,6 +326,9 @@
         "task"
       ],
       "state-aware-sticky-headers": [
+        "task"
+      ],
+      "viewport-aware-dropdowns": [
         "task"
       ]
     },
@@ -370,6 +385,9 @@
       ],
       "light-dismiss-a-dialog": [
         "task"
+      ],
+      "motion": [
+        "daily-grind"
       ],
       "move-dom-element-without-losing-state": [
         "task"

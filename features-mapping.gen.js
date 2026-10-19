@@ -292,6 +292,9 @@ window.__featuresMapping = {
   "model-partial-time-concepts": [
     "temporal"
   ],
+  "sequence-distributed-events": [
+    "temporal"
+  ],
   "stabilize-reactive-state": [
     "temporal"
   ],
@@ -402,9 +405,6 @@ window.__featuresMapping = {
   ],
   "schedule-tasks-by-priority": [
     "scheduler"
-  ],
-  "sequence-distributed-events": [
-    "temporal"
   ],
   "share-web-fonts-across-origins": [
     "tmp-cross-origin-storage",
@@ -552,10 +552,6 @@ window.__featuresMapping = {
     "scroll-initial-target",
     "scroll-snap"
   ],
-  "resilient-context-menus-and-nested-dropdowns": [
-    "anchor-positioning",
-    "popover"
-  ],
   "responsive-table": [
     "sticky-positioning",
     "container-queries"
@@ -574,6 +570,10 @@ window.__featuresMapping = {
   ],
   "state-aware-sticky-headers": [
     "container-scroll-state-queries"
+  ],
+  "viewport-aware-dropdowns": [
+    "anchor-positioning",
+    "popover"
   ],
   "2d-panning": [
     "scroll-axis-lock",
@@ -916,6 +916,35 @@ window.__featuresMapping = {
     "scroll-snap",
     "popover",
     "scroll-buttons"
+  ],
+  "content-first-noise-reduction": [
+    "popover",
+    "details"
+  ],
+  "form-factor-adaptation": [
+    "container-queries",
+    "safe-area-inset",
+    "text-wrap-balance",
+    "text-wrap-pretty"
+  ],
+  "guided-navigation": [
+    "view-transitions",
+    "cross-document-view-transitions",
+    "speculation-rules"
+  ],
+  "natural-interactions": [
+    "focus-visible",
+    "linear-easing",
+    "scroll-snap"
+  ],
+  "preference-aware-ui": [
+    "prefers-color-scheme",
+    "color-scheme",
+    "light-dark",
+    "prefers-reduced-motion",
+    "intl",
+    "network-information",
+    "service-workers"
   ],
   "adapt-scrollbar-to-contrast-preferences": [
     "scrollbar-color",
