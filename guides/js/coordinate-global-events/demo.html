@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html lang="en">
 
-<head>
+<head><script>(() => { if (!location.search.includes("preview=1")) return; let ok = false; addEventListener("pointerdown", () => { ok = true; }, true); addEventListener("keydown", () => { ok = true; }, true); const f = HTMLElement.prototype.focus; HTMLElement.prototype.focus = Element.prototype.focus = function(o) { if (ok) return f.call(this, Object.assign({}, o, { preventScroll: true })); }; for (const k of ["scrollIntoView", "scrollIntoViewIfNeeded"]) { const fn = Element.prototype[k]; if (fn) Element.prototype[k] = function(o) { if (ok) return fn.call(this, o); }; } const s = new CSSStyleSheet(); s.replaceSync("*,*::before,*::after{scroll-initial-target:none!important}"); document.adoptedStyleSheets = [...document.adoptedStyleSheets, s]; new MutationObserver(ms => { for (const m of ms) for (const n of m.addedNodes) if (n.nodeType === 1) { n.removeAttribute?.("autofocus"); n.querySelectorAll?.("[autofocus]").forEach(e => e.removeAttribute("autofocus")); } }).observe(document, { childList: true, subtree: true }); })();</script>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Timezone-Aware Meeting Planner (Temporal)</title>
@@ -241,6 +241,8 @@
       background: rgba(255, 255, 255, 0.05);
       padding: 0.1rem 0.3rem;
       border-radius: 4px;
+      word-break: break-all;
+      white-space: pre-wrap;
     }
   </style>
 </head>
@@ -389,15 +391,6 @@
           }
         }
 
-        function formatTime(zdt) {
-          const time = zdt.toPlainTime();
-          let hour = time.hour;
-          const ampm = hour >= 12 ? 'PM' : 'AM';
-          hour = hour % 12 || 12;
-          const minute = String(time.minute).padStart(2, '0');
-          return `${hour}:${minute} ${ampm}`;
-        }
-
         // 3. Render Cards
         targetTimezones.forEach(tz => {
           const isHost = tz.zone === hostTz;
@@ -406,12 +399,15 @@
           const card = document.createElement('div');
           card.className = `tz-card ${isHost ? 'host-card' : ''}`;
 
+          // Format localized time cleanly down to minutes with AM/PM using standard toLocaleString()
+          const formattedTime = targetZdt.toLocaleString('en-US', { hour: 'numeric', minute: '2-digit' });
+
           card.innerHTML = `
             <div class="card-header">
               <span class="tz-name">${tz.flag} ${tz.name}</span>
               ${isHost ? '<span class="badge badge-host">Host Location</span>' : ''}
             </div>
-            <div class="resolved-time">${formatTime(targetZdt)}</div>
+            <div class="resolved-time">${formattedTime}</div>
             <div class="card-details">
               <div class="detail-item"><span>Full String:</span> <span class="detail-value"><code>${targetZdt.toString()}</code></span></div>
               <div class="detail-item"><span>Offset:</span> <span class="detail-value"><code>${targetZdt.offset}</code></span></div>

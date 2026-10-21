@@ -3,7 +3,7 @@
     "target": "esnext",
     "module": "nodenext",
     "moduleResolution": "nodenext",
-    "strict": false,
+    "strict": true,
     "esModuleInterop": true,
     "skipLibCheck": true,
     "noEmit": true,
@@ -16,7 +16,7 @@
     "node_modules",
     "test-results",
     "mock-results",
-    "features_mapping.gen.js",
+    "features-mapping.gen.js",
     "**/grade-report"
   ]
 }

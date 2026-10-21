@@ -160,7 +160,7 @@ window.__featuresMapping = {
     "customizable-select"
   ],
   "button-group": [
-    "customizable-select"
+    "tmp-customizable-select-listbox"
   ],
   "combobox": [
     "customizable-select",
@@ -170,7 +170,7 @@ window.__featuresMapping = {
     "customizable-select"
   ],
   "cycle-toggle": [
-    "customizable-select"
+    "tmp-customizable-select-listbox"
   ],
   "filterable-select": [
     "customizable-select",
@@ -187,7 +187,7 @@ window.__featuresMapping = {
   "rating": [
     "meter",
     "input-range",
-    "customizable-select"
+    "tmp-customizable-select-listbox"
   ],
   "required-field-feedback": [
     "user-pseudos"
@@ -228,7 +228,7 @@ window.__featuresMapping = {
   "tree-view": [
     "details",
     "details-content",
-    "customizable-select"
+    "tmp-customizable-select-listbox"
   ],
   "validate-input-after-interaction": [
     "user-pseudos"
@@ -782,7 +782,7 @@ window.__featuresMapping = {
   "card": [
     "has",
     "container-queries",
-    "container-style-queries"
+    "subgrid"
   ],
   "carousel": [
     "scroll-snap",
@@ -798,7 +798,7 @@ window.__featuresMapping = {
   "checkbox-group": [
     "subgrid",
     "indeterminate",
-    "customizable-select"
+    "tmp-customizable-select-listbox"
   ],
   "content-table": [
     "sticky-positioning",
@@ -1002,8 +1002,8 @@ window.__featuresMapping = {
     "tmp-text-decoration-inset",
     "text-decoration-skip-spaces",
     "background-clip-border-area",
-    "tmp-path-length",
-    "border-shape"
+    "border-shape",
+    "corner-shape"
   ],
   "customize-scrollbar-color-and-thickness": [
     "scrollbar-color",

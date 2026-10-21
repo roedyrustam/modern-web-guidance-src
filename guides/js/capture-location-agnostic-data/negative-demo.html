@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html lang="en">
 
-<head>
+<head><script>(() => { if (!location.search.includes("preview=1")) return; let ok = false; addEventListener("pointerdown", () => { ok = true; }, true); addEventListener("keydown", () => { ok = true; }, true); const f = HTMLElement.prototype.focus; HTMLElement.prototype.focus = Element.prototype.focus = function(o) { if (ok) return f.call(this, Object.assign({}, o, { preventScroll: true })); }; for (const k of ["scrollIntoView", "scrollIntoViewIfNeeded"]) { const fn = Element.prototype[k]; if (fn) Element.prototype[k] = function(o) { if (ok) return fn.call(this, o); }; } const s = new CSSStyleSheet(); s.replaceSync("*,*::before,*::after{scroll-initial-target:none!important}"); document.adoptedStyleSheets = [...document.adoptedStyleSheets, s]; new MutationObserver(ms => { for (const m of ms) for (const n of m.addedNodes) if (n.nodeType === 1) { n.removeAttribute?.("autofocus"); n.querySelectorAll?.("[autofocus]").forEach(e => e.removeAttribute("autofocus")); } }).observe(document, { childList: true, subtree: true }); })();</script>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Temporal API: Location-Agnostic Data</title>
@@ -224,7 +224,7 @@
     function updateData() {
       const selectedDate = birthdateInput.value;
       const selectedTz = timezoneSelect.value;
-      const dateObj = new Date(selectedDate);
+      const dateObj = new Date(`${selectedDate}T00:00:00Z`);
       
       const formatter = new Intl.DateTimeFormat('en-GB', {
         year: 'numeric',
@@ -233,7 +233,11 @@
         timeZone: selectedTz
       });
 
-      birthdateValue.textContent = formatter.format(dateObj);
+      const parts = formatter.formatToParts(dateObj);
+      const day = parts.find(p => p.type === 'day').value;
+      const month = parts.find(p => p.type === 'month').value;
+      const year = parts.find(p => p.type === 'year').value;
+      birthdateValue.textContent = `${day}/${month}/${year}`;
 
       const alarmTime = alarmTimeInput.value;
       const [hours, minutes] = alarmTime.split(':');
