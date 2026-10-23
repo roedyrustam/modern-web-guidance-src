@@ -133,7 +133,7 @@ window.__featuresMapping = {
     "customizable-select"
   ],
   "autofill-address-form": [
-    "autofill"
+    "input"
   ],
   "autofill-highlight-inputs": [
     "autofill"
@@ -274,7 +274,8 @@ window.__featuresMapping = {
     "declarative-shadow-dom"
   ],
   "calculate-event-differentials": [
-    "temporal"
+    "temporal",
+    "intl-duration-format"
   ],
   "capture-location-agnostic-data": [
     "temporal"
@@ -282,20 +283,7 @@ window.__featuresMapping = {
   "coordinate-global-events": [
     "temporal"
   ],
-  "format-human-readable-durations": [
-    "temporal",
-    "intl-duration-format"
-  ],
-  "manage-recurring-intervals": [
-    "temporal"
-  ],
-  "model-partial-time-concepts": [
-    "temporal"
-  ],
-  "sequence-distributed-events": [
-    "temporal"
-  ],
-  "stabilize-reactive-state": [
+  "sort-high-precision-timestamps": [
     "temporal"
   ],
   "support-global-calendar-systems": [
@@ -845,12 +833,10 @@ window.__featuresMapping = {
     "picture-in-picture"
   ],
   "menu": [
-    "container-scroll-state-queries",
     "popover",
-    "subgrid",
-    "menu",
-    "sticky-positioning",
-    "anchor-positioning"
+    "invoker-commands",
+    "anchor-positioning",
+    "focusgroup"
   ],
   "navbar": [
     "popover"
